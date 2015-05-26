@@ -59,8 +59,8 @@ quit the connection, the entire server is blocked until the
 
 == Links
 
-* Repository: TODO
-* Bugtracker: TODO
+* Repository: https://github.com/Quintus/ruby-lmtp
+* Bugtracker: https://github.com/Quintus/ruby-lmtp/issues
 * The original Gist from which this project is a continuation:
   https://gist.github.com/Quintus/f4faf26aa022f74f7778
 
