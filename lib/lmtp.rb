@@ -262,7 +262,7 @@ class LmtpServer
 
       if str.strip == "RSET" && !raw # Ensure that in DATA we can ignore it if this text occurs
         reply "220 2.0.0 Resetting."
-        throw :rset 
+        throw :rset
       end
 
       str
@@ -375,14 +375,3 @@ class LmtpServer
   end
 
 end
-
-sock = "/var/spool/postfix/private/socktest"
-server = LmtpServer.new(sock, 0666) do |msg|
-  puts "--- Start of email ---"
-  puts msg
-  puts "--- End of email ---"
-end
-server.logging do |tag, msg|
-  $stderr.puts "[#{tag}] #{msg}"
-end
-server.start
