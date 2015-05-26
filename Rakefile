@@ -10,3 +10,10 @@ Rake::RDocTask.new do |rd|
   rd.main = "README.rdoc"
   rd.rdoc_dir = "doc"
 end
+
+desc "Run the tests."
+task :test do
+  cd "test" do
+    ruby "test_lmtp.rb"
+  end
+end

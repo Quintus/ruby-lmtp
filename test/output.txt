@@ -1,0 +1,518 @@
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "RSET\r\n"
+[debug] server: "220 2.0.0 Resetting.\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "RSET\r\n"
+[debug] server: "220 2.0.0 Resetting.\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com> BODY=8BITMIME\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "\xC3\x84\xC3\xB6\xC3\xBC\xC3\x9F\xE1\xBA\x9Efoo.\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Äöüßẞfoo.
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: nil
+[warning] Client closed connection without QUIT.
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "RCPT TO:<jones@foo.edu>\r\n"
+[debug] client: "RCPT TO:<green@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "RCPT TO:<jones@foo.edu>\r\n"
+[debug] client: "RCPT TO:<green@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com> BODY=8BITMIME\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "\xC3\x84\xC3\xB6\xC3\xBC\xC3\x9F\xE1\xBA\x9Efoo.\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Äöüßẞfoo.
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "RSET\r\n"
+[debug] server: "220 2.0.0 Resetting.\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "RSET\r\n"
+[debug] server: "220 2.0.0 Resetting.\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: "QUIT\r\n"
+[debug] server: "221 2.0.0 hades Goodbye.\r\n"
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
+<><><><><><><><><><>
+[info] Starting server
+[info] Accepting connections.
+[info] Client connect from /tmp/test-lmtp.sock.
+[debug] server: "220 hades LMTP server ready\r\n"
+[debug] client: "LHLO localhost\r\n"
+[info] Client reports name: 'localhost'
+[debug] server: "250-hades\r\n"
+[debug] server: "250-PIPELINING\r\n"
+[debug] server: "250-ENHANCEDSTATUSCODES\r\n"
+[debug] server: "250 8BITMIME\r\n"
+[debug] client: "MAIL FROM:<chris@bar.com>\r\n"
+[debug] client: "RCPT TO:<pat@foo.edu>\r\n"
+[debug] client: "DATA\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "250 2.1.0 ok\r\n"
+[debug] server: "354 Start data. End with <CRLF>.<CRLF>\r\n"
+[debug] client: "From: chris@bar.com\r\n"
+[debug] client: "To: pat@foo.edu\r\n"
+[debug] client: "Subject: Test\r\n"
+[debug] client: "\r\n"
+[debug] client: "Text line 1\r\n"
+[debug] client: "Text line 2\r\n"
+[debug] client: ".\r\n"
+[debug] Invoking message callback.
+--- Received email ---
+From: chris@bar.com
+To: pat@foo.edu
+Subject: Test
+
+Text line 1
+Text line 2
+--- End of email ---
+[debug] server: "250 2.6.0 All your bytes are belong to us.\r\n"
+[debug] client: nil
+[warning] Client closed connection without QUIT.
+[info] Client connection closed: /tmp/test-lmtp.sock
+[info] Removing UNIX socket '/tmp/test-lmtp.sock'
