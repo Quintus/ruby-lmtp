@@ -14,7 +14,7 @@ EOF
   spec.authors = ["Marvin Gülker"]
   spec.email = "quintus@quintilianus.eu"
   spec.files = Dir["lib/**/*.rb", "README.rdoc", "LICENSE"]
-  spec.homepage = "https://github.com/Quintus/ruby-lmtp"
+  spec.homepage = "https://quintus.github.io/ruby-lmtp/"
   spec.license = "BSD"
 
   spec.platform = Gem::Platform::RUBY
