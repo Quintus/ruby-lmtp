@@ -9,6 +9,7 @@ Rake::RDocTask.new do |rd|
   rd.title = "LMTP library for Ruby"
   rd.main = "README.rdoc"
   rd.rdoc_dir = "doc"
+  rd.generator = "emerald"
 end
 
 desc "Run the tests."
