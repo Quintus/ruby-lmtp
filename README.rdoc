@@ -23,11 +23,11 @@ None but Ruby’s standard +socket+ library.
 
 == Installation
 
-The library is contained entirely in the file `lib/lmtp.rb` so if you
-wanted, you can just copy that file into your application (or use a
-Git submodule or other means of referencing external projects). The
-library is also available on RubyGems under the name “lmtp”, so the
-standard
+The library is contained entirely in the file <tt>lib/lmtp.rb</tt> so
+if you wanted, you can just copy that file into your application (or
+use a Git submodule or other means of referencing external
+projects). The library is also available on RubyGems under the name
+“lmtp”, so the standard
 
     $ gem install lmtp
 
