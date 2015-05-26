@@ -1,0 +1,373 @@
+@charset "UTF-8";
+/**
+ * The general layout for method documentations. It
+ * formats a header and a description with borders all
+ * around it. Fore- and background colours are chosen
+ * by you. */
+/**
+ * Heading mixins used for relative headings.
+ */
+/**
+ * Everything that is somehow ToC-like includes
+ * this mixin. */
+/****************************************
+ * General styles
+ ****************************************/
+html {
+  height: 100%; }
+
+body {
+  background-color: #FEFEFE;
+  font-family: serif;
+  height: 100%;
+  margin: 0px; }
+
+h1 {
+  border-bottom: 1px solid gray;
+  color: black;
+  font-family: serif;
+  font-variant: normal;
+  font-weight: normal;
+  margin-top: 0px; }
+
+h2 {
+  border-bottom: 1px dotted #0E3062;
+  color: #0E3062;
+  font-family: serif;
+  font-variant: normal;
+  font-weight: bold; }
+
+h3 {
+  border-bottom: none;
+  color: gray;
+  font-family: serif;
+  font-variant: small-caps;
+  font-weight: normal; }
+
+h4 {
+  border-bottom: none;
+  color: #0E3062;
+  font-family: sans-serif;
+  font-variant: normal;
+  font-weight: bold; }
+
+h5 {
+  border-bottom: none;
+  color: black;
+  font-family: sans-serif;
+  font-variant: normal;
+  font-weight: bold; }
+
+h6 {
+  border-bottom: none;
+  color: black;
+  font-family: sans-serif;
+  font-variant: normal;
+  font-weight: normal; }
+
+a {
+  color: #336699; }
+  a:hover {
+    background-color: #336699;
+    color: white; }
+
+dl {
+  border: 1px solid gray; }
+  dl dt {
+    color: white;
+    background-color: gray; }
+
+/****************************************
+ * Common elements
+ ****************************************/
+.clear {
+  clear: both; }
+
+/* The ¶ signs on headings */
+h1 span a, h2 span a, h3 span a, h4 span a, h5 span a, h6 span a {
+  display: hidden;
+  text-decoration: none;
+  color: gray; }
+  h1 span a:before, h2 span a:before, h3 span a:before, h4 span a:before, h5 span a:before, h6 span a:before {
+    content: " ";
+    /* otherwise the ¶ looks bad */ }
+
+/* These spans are created by the search field */
+span.search-result {
+  background-color: yellow; }
+
+/********** Method docs **********/
+div.method {
+  margin-bottom: 5px;
+  /* Shift headings down by 1, so that a level-2
+   * heading effectively becomes a level-3 one. */ }
+  div.method h1 {
+    border-bottom: 1px dotted #0E3062;
+    color: #0E3062;
+    font-family: serif;
+    font-variant: normal;
+    font-weight: bold; }
+  div.method h2 {
+    border-bottom: none;
+    color: gray;
+    font-family: serif;
+    font-variant: small-caps;
+    font-weight: normal;
+    font-size: 120%; }
+  div.method h3 {
+    border-bottom: none;
+    color: #0E3062;
+    font-family: sans-serif;
+    font-variant: normal;
+    font-weight: bold; }
+  div.method h4 {
+    border-bottom: none;
+    color: black;
+    font-family: sans-serif;
+    font-variant: normal;
+    font-weight: bold; }
+  div.method h5 {
+    border-bottom: none;
+    color: black;
+    font-family: sans-serif;
+    font-variant: normal;
+    font-weight: normal; }
+  div.method div.header {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-family: monospace;
+    font-size: 120%;
+    font-weight: bold; }
+  div.method div.description {
+    padding-left: 4px;
+    padding-right: 4px; }
+
+div.public-class {
+  border: 1px solid gray;
+  background-color: #FFFFD2; }
+  div.public-class div.header {
+    border-bottom: 1px solid gray;
+    background-color: #EEEEEE;
+    color: black; }
+  div.public-class div.description {
+    color: black; }
+
+div.protected-class {
+  border: 1px solid #005B10;
+  background-color: #DDFFDD; }
+  div.protected-class div.header {
+    border-bottom: 1px solid #005B10;
+    background-color: #7FD58E;
+    color: black; }
+  div.protected-class div.description {
+    color: black; }
+
+div.private-class {
+  border: 1px solid #00FF00;
+  background-color: black; }
+  div.private-class div.header {
+    border-bottom: 1px solid #00FF00;
+    background-color: #333333;
+    color: #00FF00; }
+  div.private-class div.description {
+    color: white; }
+
+div.public-instance {
+  border: 1px solid blue;
+  background-color: #EEEEEE; }
+  div.public-instance div.header {
+    border-bottom: 1px solid blue;
+    background-color: #336699;
+    color: white; }
+  div.public-instance div.description {
+    color: black; }
+
+div.protected-instance {
+  border: 1px solid black;
+  background-color: #DDDDFF; }
+  div.protected-instance div.header {
+    border-bottom: 1px solid black;
+    background-color: #888888;
+    color: white; }
+  div.protected-instance div.description {
+    color: black; }
+
+div.private-instance {
+  border: 1px solid yellow;
+  background-color: black; }
+  div.private-instance div.header {
+    border-bottom: 1px solid yellow;
+    background-color: #333333;
+    color: yellow; }
+  div.private-instance div.description {
+    color: white; }
+
+/********** Indices **********/
+div.index {
+  height: 33.33%; }
+  div.index div.list {
+    height: 80%;
+    overflow-x: hidden;
+    overflow-y: auto; }
+  div.index ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 4px 0px 0px 0px; }
+    div.index ul li {
+      font-size: small; }
+  div.index div.header {
+    display: table;
+    /* Needed for vertically centering the text in it, see <p> style below */
+    width: 100%;
+    height: 20%;
+    border: 1px solid #0E3062;
+    background-color: #336699;
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    font-variant: small-caps; }
+    div.index div.header p {
+      margin: 0px;
+      display: table-cell;
+      vertical-align: middle; }
+
+span.method-classname {
+  color: gray; }
+
+/********** Toplevel docs **********/
+p.toplevel-name {
+  float: right;
+  font-size: small;
+  text-align: right;
+  color: gray; }
+
+div.toc {
+  float: right;
+  width: 25%;
+  overflow: hidden;
+  margin-top: 4px;
+  margin-left: 4px;
+  border: 1px solid gray;
+  background-color: #EEEEEE; }
+  div.toc p {
+    margin: 10px 0px 0px 0px;
+    font-size: 120%;
+    font-variant: small-caps;
+    color: gray;
+    text-align: center; }
+  div.toc ul {
+    list-style-type: none;
+    padding-left: 20px; }
+
+/********** Class/Module docs **********/
+h1.classmodule {
+  border: none;
+  margin-bottom: 0px; }
+  h1.classmodule span.leader {
+    font-size: 80%;
+    font-variant: small-caps;
+    color: gray; }
+
+h1.module {
+  border-bottom: 1px solid gray; }
+
+p.superclass {
+  margin-top: 0px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 4px;
+  font-size: small;
+  color: gray; }
+
+div.method-overview {
+  float: right;
+  width: 25%;
+  overflow: hidden;
+  margin-top: 4px;
+  margin-left: 4px;
+  border: 1px solid gray;
+  background-color: #EEEEEE; }
+  div.method-overview p {
+    margin: 10px 0px 0px 0px;
+    font-size: 120%;
+    font-variant: small-caps;
+    color: gray;
+    text-align: center; }
+  div.method-overview ul {
+    list-style-type: none;
+    padding-left: 10px; }
+
+/********** Constants docs **********/
+table.constants {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid gray; }
+  table.constants td {
+    border: 1px solid gray; }
+  table.constants th {
+    border: 1px solid gray;
+    background-color: #EEEEEE; }
+
+/********** Attribute docs **********/
+ul.attribute-list {
+  line-height: 1.5em; }
+  ul.attribute-list strong {
+    color: #336699; }
+  ul.attribute-list sup {
+    font-size: x-small; }
+
+/********** Sourcecode listings **********/
+p.show-source {
+  font-style: italic; }
+
+pre {
+  overflow-x: auto;
+  border: 1px solid gray;
+  padding: 4px;
+  background-color: #222222;
+  color: white; }
+
+pre.ruby span.ruby-keyword {
+  color: #00CCCC;
+  font-weight: bold; }
+pre.ruby span.ruby-regexp {
+  background-color: #006C0D;
+  color: #222222; }
+pre.ruby span.ruby-string {
+  color: #FF5500; }
+pre.ruby span.ruby-ivar {
+  color: #4444C8; }
+pre.ruby span.ruby-constant {
+  color: #AA00AA; }
+pre.ruby span.ruby-comment {
+  color: #008E2F; }
+
+/****************************************
+ * Unique elements
+ ****************************************/
+div#sidebar {
+  position: fixed;
+  top: 0px;
+  width: 14%;
+  min-width: 100px;
+  height: 100%;
+  padding-right: 8px;
+  overflow: hidden;
+  border-right: 2px dashed gray; }
+  div#sidebar form#search {
+    height: 5%; }
+    div#sidebar form#search p {
+      margin: 0px 0px 2px 0px; }
+      div#sidebar form#search p input {
+        width: 100%; }
+  div#sidebar div#indices {
+    height: 95%; }
+
+div#content {
+  padding-right: 10px;
+  padding-top: 8px;
+  margin-left: 15.5%; }
+
+div#footer {
+  border-top: 1px solid gray;
+  font-size: small;
+  color: gray; }
