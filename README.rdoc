@@ -1,0 +1,97 @@
+= Minimal LMTP Server for Ruby
+
+This project is a minimal LMTP server for Ruby. Ever wanted to stick
+your Ruby application behind a real MTA like Postfix so it can receive
+mails directly? This library is what you need.
+
+This library provides a single class, LmtpServer, which will open a
+UNIX domain socket and listen for LMTP commands on it. You then direct
+your MTA to deliver the mails it receives via LMTP over the socket
+opened by this library. The email (and surroundings) will then show up
+in form of callbacks in your application. To speak in terms of email
+administration, this library thus implements an MDA (mail delivery
+agent).
+
+It does not provide a means to actually process the emails you
+receive, you will receive them as a large string with all the original
+CRLF line separators included. It is recommended to use a library like
+mail[https://github.com/mikel/mail] for that.
+
+== Dependencies
+
+None but Ruby’s standard +socket+ library.
+
+== Usage
+
+   require "lmtp"
+
+   LmtpServer.new("/var/spool/postfix/private/ruby-lmtp") do |msg|
+     puts "-- Start email --"
+     puts msg
+     puts "-- End email --"
+   end
+
+You can find a lot more examples in the documentation of the
+LmtpServer class.
+
+== Security considerations
+
+LMTP (RFC 2033) was not designed to be used over the WWW and the RFC
+actively recommends against such usage. LMTP contains no
+authentication and similar security measures; it is only intended to
+be used in a local, trusted environment, which is the reason why this
+library only provides UNIX domain sockets for listening and not TCP
+sockets.
+
+Also keep in mind that this library is fairly minimal. While I think I
+have implemented RFC 2033 correctly, I have not intensly read RFC 821
+(SMTP), which is referenced from the LMTP specification at certain
+parts. If unusual commands are used over the UNIX socket, unexpected
+things may happen in form of exceptions. Feel free to report such
+behaviour as a bug.
+
+The library is not multithreaded. You can threadsafely call
+LmtpServer#stop, but email messages will be proceeded one by one. If
+multiple clients connect to the UNIX domain socket, they will be
+queued and handled after one another. That is, if one client does not
+quit the connection, the entire server is blocked until the
+(configurable) timeout value is reached.
+
+== Links
+
+* Repository: TODO
+* Bugtracker: TODO
+* The original Gist from which this project is a continuation:
+  https://gist.github.com/Quintus/f4faf26aa022f74f7778
+
+While you are at it, check out my (German)
+Blog[http://www.quintilianus.eu].
+
+== License
+
+Copyright © 2015 Marvin Gülker
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in the
+   documentation and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
