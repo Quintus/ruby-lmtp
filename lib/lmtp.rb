@@ -84,7 +84,10 @@ require "socket"
 class LmtpServer
 
   # The machine’s hostname is read from this file.
-  HOSTNAME_FILE = "/etc/hostname"
+  HOSTNAME_FILE = "/etc/hostname".freeze
+
+  # Version of this library.
+  VERSION = "0.0.1".freeze
 
   # Timeout in seconds when a client is forcibly disconnected when
   # it does nothing.
