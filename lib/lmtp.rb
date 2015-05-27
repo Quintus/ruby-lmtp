@@ -345,7 +345,8 @@ class LmtpServer
           log :debug, "Invoking message callback."
           @msgcb.call(message)
         rescue => e
-          reply "551 Internal error: #{e.class}: #{e.message}"
+          log :err, "Internal callback crashed: #{e.class}: #{e.message}: #{e.backtrace.join('|')}"
+          reply "551 Internal error"
           @client.close
           return
         end
