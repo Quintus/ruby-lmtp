@@ -83,16 +83,6 @@ require "socket"
 # * {RFC 821}[https://tools.ietf.org/html/rfc821] for the minimally required parts
 class LmtpServer
 
-  # Raise this to reject a mail. Be sure to have #code be a
-  # code that indicates a permanent failure so the client
-  # will not retry to send the mail.
-  class RejectMail < StandardError
-    attr_reader :code, :reason
-    def initialize(code, reason)
-      @code, @reason = code, reason
-    end
-  end
-
   # The machine’s hostname is read from this file.
   HOSTNAME_FILE = "/etc/hostname".freeze
 
@@ -137,11 +127,6 @@ class LmtpServer
   #   Message callback. Receives any email as a string that is
   #   passed to this LMTP server. The string will contain the
   #   original carriagereturn+newline line breaks from the protcol.
-  #   Note that you may raise the RejectMail exception inside this
-  #   callback. If you do that, the client will receive the error
-  #   code you specified when instanciating RejectMail and the
-  #   respective reason you gave. The connection is closed after
-  #   transmitting this information to the client.
   #
   # === Return value
   # Returns the new instance.
@@ -315,8 +300,8 @@ class LmtpServer
 
       catch :rset do
         # Allow pipelining by accumulation
-        responses = []
         loop do
+          responses = []
           line = gets
           break if line =~ /^DATA$/
           response = @headercb.call(line)
@@ -326,14 +311,12 @@ class LmtpServer
           if line.start_with?("RCPT") && response.start_with?("2")
             no_valid_recipients = false
           end
-
           responses << response
+          responses.each do |response|
+            reply response
+          end
         end
-
         # Answer the pipeline
-        responses.each do |response|
-          reply response
-        end
 
         # Prepare for receiving
         reply "354 Start data. End with <CRLF>.<CRLF>"
@@ -359,14 +342,8 @@ class LmtpServer
         begin
           log :debug, "Invoking message callback."
           @msgcb.call(message)
-        rescue RejectMail => e
-          log :info, "Message not accepted because callback requested that (#{e.code} #{e.reason})."
-          reply "#{e.code} #{e.reason}"
-          @client.close
-          return
         rescue => e
-          log :err, "Internal callback crashed: #{e.class}: #{e.message}: #{e.backtrace.join('|')}"
-          reply "551 Internal error"
+          reply "551 Internal error: #{e.class}: #{e.message}"
           @client.close
           return
         end

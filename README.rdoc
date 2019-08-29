@@ -21,18 +21,6 @@ mail[https://github.com/mikel/mail] for that.
 
 None but Ruby’s standard +socket+ library.
 
-== Installation
-
-The library is contained entirely in the file <tt>lib/lmtp.rb</tt> so
-if you wanted, you can just copy that file into your application (or
-use a Git submodule or other means of referencing external
-projects). The library is also available on RubyGems under the name
-“lmtp”, so the standard
-
-    $ gem install lmtp
-
-will give you access to it as well.
-
 == Usage
 
    require "lmtp"
@@ -73,7 +61,6 @@ quit the connection, the entire server is blocked until the
 
 * Repository: https://github.com/Quintus/ruby-lmtp
 * Bugtracker: https://github.com/Quintus/ruby-lmtp/issues
-* Documentation: https://quintus.github.io/ruby-lmtp/
 * The original Gist from which this project is a continuation:
   https://gist.github.com/Quintus/f4faf26aa022f74f7778
 
